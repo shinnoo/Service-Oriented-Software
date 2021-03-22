@@ -9,6 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.client.RestTemplate;
 
 import javax.jms.ConnectionFactory;
@@ -22,10 +23,10 @@ public class StoreServiceApplication {
 		SpringApplication.run(StoreServiceApplication.class, args);
 	}
 
-	@Bean
-	public Topic topic(){
-		return new ActiveMQTopic("test-topic");
-	}
+//	@Bean
+//	public Topic topic(){
+//		return new ActiveMQTopic("test-topic");
+//	}
 
 	@Bean
     @LoadBalanced        // Load balance between service instances running at different ports.
